@@ -1,0 +1,30 @@
+def calculate_portfolio_stats(shares_data):
+    total_cost = 0
+    total_sold_value = 0
+
+    for share_name, (purchase_date, cost_price, num_shares, selling_price) in shares_data:
+        total_cost += cost_price * num_shares
+        total_sold_value += selling_price * num_shares
+
+    total_gain_loss = total_sold_value - total_cost
+    percentage_profit_loss = (total_gain_loss / total_cost) * 100 if total_cost != 0 else 0
+
+    return total_cost, total_gain_loss, percentage_profit_loss
+
+
+# Example shares data
+shares_data = [
+    ("ABC Corp", ("2023-01-15", 150.0, 100, 200.0)),
+    ("XYZ Inc", ("2022-11-30", 200.0, 50, 250.0)),
+    ("MNO Ltd", ("2024-03-10", 120.0, 75, 150.0)),
+    # Add more shares as needed
+]
+
+# Calculate portfolio statistics
+total_cost, total_gain_loss, percentage_profit_loss = calculate_portfolio_stats(shares_data)
+
+# Display results
+print("Portfolio Statistics:")
+print("Total Cost of Portfolio: $", total_cost)
+print("Total Amount Gained/Lost: $", total_gain_loss)
+print("Percentage Profit/Loss: ", round(percentage_profit_loss, 2), "%")
