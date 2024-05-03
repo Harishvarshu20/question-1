@@ -1,0 +1,5 @@
+items_prices = [("Apple", 1.5),("Banana",0.75)("Orange",1.2),("Grapes",2.0),("Mango",3.5)]
+sorted_items_prices = sorted (items_prices, key=operator.itemgetter(i), reverse=True)
+print("Items sorted in descending order by price:")
+for item, price in sorted_items_prices:
+    print(#"{item}: ${price}")
