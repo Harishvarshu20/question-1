@@ -1,0 +1,18 @@
+def generate_tuples(names, roll_numbers, marks):
+    tuples_list = []
+    for i in range(len(names)):
+        tuples_list.append((names[i], roll_numbers[i], marks[i]))
+    return tuples_list
+names = ["Alice", "Bob", "Charlie", "David"]
+roll_numbers = [101, 102, 103, 104]
+marks = [85, 90, 75, 80]
+student_tuples = generate_tuples(names, roll_numbers, mark)
+all_names_tuple = tuple(names)
+all_roll_numbers_tuple = tuple(roll_numbers)
+all_marks_tuple = tuple(marks)
+print("List of tuples containing name, roll number, and marks:")
+for student in student_tuples:
+    print(student)
+print("\nTuple containing all names:", all_names_tuple)
+print("Tuple containing all roll numbers:", all_roll_numbers_tuple)
+print("Tuple containing all marks:", all_marks_tuple)
